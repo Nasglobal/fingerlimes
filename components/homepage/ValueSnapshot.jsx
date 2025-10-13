@@ -81,7 +81,7 @@ export default function ValueSnapshot() {
           >
             <div className="w-full ">
               <Image
-                src="/assets/images/value-illustration.png"
+                src="/assets/images/value-illustration.svg"
                 alt="Value snapshot illustration"
                 width={520}
                 height={380}

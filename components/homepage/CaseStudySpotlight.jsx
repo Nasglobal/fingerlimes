@@ -32,10 +32,10 @@ export default function CaseStudySpotlight() {
             className="relative z-10  rounded-full flex items-center justify-center bg-white"
           >
             <Image
-              src="/assets/images/Audiomack-logo.png"
+              src="/assets/images/Audiomack-Logo.png"
               alt="Audiomack"
               width={100}
-              height={80}
+              height={100}
               className="object-contain"
             />
           </motion.div>
