@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
+import { X } from "lucide-react";
 
 export default function HangingMenu() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,14 +70,18 @@ export default function HangingMenu() {
             onClick={() => setMobileOpen((s) => !s)}
             className="p-2 focus:outline-none"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            {
+              mobileOpen ? <X color="white"/> :
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M4 7h16M4 12h16M4 17h16"
-                stroke="currentColor"
+                stroke="#FFF"
                 strokeWidth="1.6"
                 strokeLinecap="round"
               />
             </svg>
+            } 
+            
           </button>
         </div>
       </div>
@@ -88,14 +93,14 @@ export default function HangingMenu() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="md:hidden bg-black/95 w-full backdrop-blur-sm"
+            className="md:hidden bg-black/95 text-white/70 w-full backdrop-blur-sm"
           >
             <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col gap-4">
               {links.map((l, i) => (
                 <motion.button
                   key={l.id}
                   onClick={() => handleNav(l.id)}
-                  className="text-left text-lg font-semibold uppercase"
+                  className="text-left text-sm font-semibold uppercase"
                   initial={{ opacity: 0, x: -8 }}
                   animate={{
                     opacity: 1,

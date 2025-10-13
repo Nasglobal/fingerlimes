@@ -13,7 +13,7 @@ export default function ScrollCue() {
 
   return (
     <motion.div
-      className="flex items-center gap-3 mt-10 text-white/70 text-sm tracking-wide cursor-pointer"
+      className="flex items-center gap-3 z-10 mt-10 text-white/70 text-sm tracking-wide cursor-pointer"
       onClick={handleScroll}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

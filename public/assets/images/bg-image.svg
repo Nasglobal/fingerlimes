@@ -1,0 +1,77 @@
+<!-- Save as public/images/fingerlimes-blur-bg.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- background gradient -->
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#030405"></stop>
+      <stop offset="1" stop-color="#07100e"></stop>
+    </linearGradient>
+
+    <!-- lime petal gradient -->
+    <linearGradient id="petal" x1="0" x2="1">
+      <stop offset="0" stop-color="#7af08d"></stop>
+      <stop offset="0.6" stop-color="#96f36b"></stop>
+      <stop offset="1" stop-color="#d6ff6a"></stop>
+    </linearGradient>
+
+    <!-- soft radial vignette for depth -->
+    <radialGradient id="vign" cx="50%" cy="40%" r="80%">
+      <stop offset="0" stop-color="rgba(0,0,0,0)"></stop>
+      <stop offset="1" stop-color="rgba(0,0,0,0.55)"></stop>
+    </radialGradient>
+
+    <!-- blur filter for soft watermark -->
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"></feGaussianBlur>
+      <feComposite in="SourceGraphic" in2="b" operator="over"></feComposite>
+    </filter>
+
+    <!-- small crisp drop shadow for main text -->
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- base -->
+  <rect width="100%" height="100%" fill="url(#bg)"></rect>
+
+  <!-- subtle neon network blur behind -->
+  <g opacity="0.06" transform="translate(80,40)">
+    <path d="M60 200 C160 80 320 80 420 200 S700 360 860 200" stroke="#0f3326" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+    <path d="M200 560 C320 420 540 420 680 560 S1020 760 1200 560" stroke="#083a28" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
+  </g>
+
+  <!-- blurred lime-petal watermark cluster (soft, large) -->
+  <g transform="translate(1280,260)" filter="url(#softBlur)" opacity="0.6">
+    <!-- 4 petals -->
+    <ellipse cx="0" cy="0" rx="120" ry="44" transform="rotate(-18)" fill="url(#petal)" opacity="0.85"></ellipse>
+    <ellipse cx="-60" cy="34" rx="110" ry="40" transform="rotate(12)" fill="url(#petal)" opacity="0.7"></ellipse>
+    <ellipse cx="40" cy="70" rx="100" ry="36" transform="rotate(48)" fill="url(#petal)" opacity="0.6"></ellipse>
+    <ellipse cx="160" cy="24" rx="90" ry="32" transform="rotate(-48)" fill="url(#petal)" opacity="0.5"></ellipse>
+  </g>
+
+  <!-- faint vignette -->
+  <rect width="100%" height="100%" fill="url(#vign)"></rect>
+
+  <!-- main logo text -->
+  <g transform="translate(160,420)">
+    <!-- subtle glow underline -->
+    <rect x="0" y="120" width="720" height="6" rx="3" fill="#0b7b27" opacity="0.06"></rect>
+
+    <!-- text -->
+    <text x="0" y="80" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="800" font-size="96" fill="white" style="letter-spacing:-1px" filter="url(#textShadow)">
+      Fingerlimes
+    </text>
+
+    <!-- subtitle / tagline -->
+    <text x="0" y="130" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="600" font-size="20" fill="#cfeed1" opacity="0.9">
+      Clarity • Scale • Precision
+    </text>
+  </g>
+
+  <!-- small watermark logo (crisp) bottom-left -->
+  <g transform="translate(80,920)" opacity="0.85">
+    <circle cx="0" cy="0" r="22" fill="url(#petal)"></circle>
+    <text x="40" y="10" font-family="Inter, system-ui" font-size="14" fill="#ffffff" font-weight="700">Fingerlimes</text>
+  </g>
+</svg>

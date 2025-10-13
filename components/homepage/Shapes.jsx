@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-export default function Shapes() {
+export default function Shapes({variants}) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function Shapes() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    const nodes = Array.from({ length: 60 }, () => ({
+    const nodes = Array.from({ length: 20 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
@@ -74,10 +74,10 @@ export default function Shapes() {
 
   return (
     <motion.div
-      className="absolute right-0  top-0 h-full w-3/5  z-30 mt-10"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      className="absolute md:right-0  md:top-0 h-full md:w-3/5 w-full   mt-20 md:mt-10"
+     initial="hidden" 
+     animate="show"
+     variants={variants}
     >
       <canvas ref={canvasRef} className="w-full h-full" />
     </motion.div>
