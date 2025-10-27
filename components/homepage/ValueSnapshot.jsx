@@ -47,7 +47,7 @@ const cardVariant = (delay = 0) => ({
 
 export default function ValueSnapshot() {
   return (
-    <section id="value-snapshot" className="md:py-20 py-10 z-10 md:mt-10 text-white">
+    <section id="value-snapshot" className="md:py-20 pb-10 z-10 md:mt-10 text-white">
         <Container>
       <div className="max-w-6xl mx-auto md:px-6 px-1">
         {/* Header */}
@@ -92,7 +92,7 @@ export default function ValueSnapshot() {
           </motion.div>
 
           {/* RIGHT: Cards */}
-          <div className="order-1 md:order-2 grid grid-cols-1 gap-6">
+          <div className="order-1 md:order-2 grid grid-cols-1 gap-8 mt-4">
             {values.map((v, i) => {
               const Icon = v.icon;
               return (

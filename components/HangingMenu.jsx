@@ -5,10 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 import { X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function HangingMenu() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState(false);
+  const pathname = usePathname();
+  
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -17,17 +21,26 @@ export default function HangingMenu() {
   }, []);
 
   const links = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "services", label: "Services" },
-    { id: "blog", label: "Blog" },
-    { id: "contact", label: "Contact" },
+    { id: "/", href: "/", label: "Home" },
+    { id: "about", href: "/about", label: "About" },
+    { id: "services", href: "/services", label: "Services" },
+    { id: "blog", href: "/blog", label: "Blog" },
+    { id: "contact", href: "/contact", label: "Contact" },
   ];
 
-  const handleNav = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleNav = () => {
+    // const el = document.getElementById(id);
+    // if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActive((prev) => !prev);
     setMobileOpen(false);
+  };
+
+  const handleNavMobile = (href) => {
+    // const el = document.getElementById(id);
+    // if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActive((prev) => !prev);
+    setMobileOpen(false);
+    window.history.replaceState(null, '', href)
   };
 
   return (
@@ -51,17 +64,22 @@ export default function HangingMenu() {
         </Link>
         
         <nav
-        className="hidden md:flex md:gap-10 gap-8 bg-black/20 backdrop-blur-md border border-white/10   rounded-full py-3  px-5">
-          {links.map((l) => (
-            <button
+        className="hidden md:flex md:gap-10 gap-8 bg-black/20 backdrop-blur-md border border-white/10   rounded-full py-3  px-6">
+          {links.map((l) => {
+            const isActive = pathname === l.href;
+            return(
+            <Link
+              href={l.href}
+              prefetch={false}
               key={l.id}
               onClick={() => handleNav(l.id)}
               className="relative group text-sm text-white/60 font-medium  tracking-wide"
             >
               <span>{l.label}</span>
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-[#0b7b27]" />
-            </button>
-          ))}
+              {isActive && <span className={`absolute left-0 -bottom-1 h-[2px] w-full  bg-[#0b7b27]`} /> }
+              <span className={`absolute left-0 -bottom-1 h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-[#0b7b27]`} />
+            </Link>)
+          })}
         </nav>
 
         {/* mobile hamburger */}
@@ -96,11 +114,13 @@ export default function HangingMenu() {
             className="md:hidden bg-black/95 text-white/70 w-full backdrop-blur-sm"
           >
             <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col gap-4">
-              {links.map((l, i) => (
+              {links.map((l, i) => {
+                const isActive = pathname === l.href;
+                return(
                 <motion.button
                   key={l.id}
-                  onClick={() => handleNav(l.id)}
-                  className="text-left text-sm font-semibold uppercase"
+                  onClick={() => handleNavMobile()}
+                  className={`${isActive ? "text-green-600":""} text-left text-sm font-semibold uppercase`}
                   initial={{ opacity: 0, x: -8 }}
                   animate={{
                     opacity: 1,
@@ -108,9 +128,15 @@ export default function HangingMenu() {
                     transition: { delay: i * 0.05 },
                   }}
                 >
+                  <Link
+                  href={l.href}
+                  prefetch={false}
+                  >
                   {l.label}
-                </motion.button>
-              ))}
+                  </Link>
+                  
+                </motion.button>)
+              })}
             </div>
           </motion.nav>
         )}

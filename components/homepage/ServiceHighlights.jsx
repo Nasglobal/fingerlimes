@@ -10,7 +10,7 @@ const services = [
     title: "Build a Product",
     desc: "From software engineering to dedicated teams, we help you scale with speed and precision.",
     link: "Let’s Build Together →",
-    href: "/services/product",
+    href: "/services",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const services = [
     title: "Telco VAS",
     desc: "Connect to millions across Africa through deep telco integrations — proven with MTN, Airtel, GLO, and 9Mobile.",
     link: "See Case Study →",
-    href: "/services/telco",
+    href: "/services",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const services = [
     title: "AI & Data",
     desc: "From predictive insights to generative AI, our data-driven approach powers smarter decisions.",
     link: "Explore AI Solutions →",
-    href: "/services/ai",
+    href: "/services",
   },
 ];
 

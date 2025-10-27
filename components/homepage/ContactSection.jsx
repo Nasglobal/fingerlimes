@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, PhoneCall,MapPin,MailIcon } from "lucide-react";
+import { ArrowRight, PhoneCall,MapPin,MailIcon,BookAIcon } from "lucide-react";
 import Container from "../Container";
+import Link from "next/link";
 
-export default function ContactSection() {
+export default function ContactSection({header, spanheader,subtile}) {
   return (
     <section
       id="contact"
@@ -19,12 +20,11 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-xl md:text-2xl font-extrabold mb-6">
-            Every Big Outcome Starts With a{" "}
-            <span className="text-green-400">Simple Conversation</span>
+            {header}{" "}
+            <span className="text-green-400">{spanheader}</span>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto text-sm  mb-12">
-            Whether you’re building a new product, scaling into new markets, or exploring
-            AI-driven opportunities, we’re here to help.
+            {subtile}
           </p>
         </motion.div>
 
@@ -50,20 +50,20 @@ export default function ContactSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
-          <a
+          <Link
             href="/contact"
             className="group px-8 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:scale-105 transition-transform flex items-center justify-center gap-2"
           >
             Start a Conversation
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
 
           <a
-            href="/book"
+            href=" https://fingerlimes.youcanbook.me"
             className="group px-8 py-3 border border-white/30 rounded-full hover:bg-white/10 transition flex items-center justify-center gap-2"
           >
-            <PhoneCall className="w-4 h-4 text-green-400" />
-            Book a Call
+            <BookAIcon className="w-4 h-4 text-green-400" />
+            Book appointment
           </a>
         </motion.div>
 

@@ -41,8 +41,8 @@ export default function BlogTeaser() {
         transition={{ duration: 0.8 }}
         className="mb-10 text-left"
       >
-        <h2 className="text-xl flex md:text-left text-center md:text-3xl  font-extrabold mb-4">
-          Ideas. <span className="text-green-400">Insights.</span> Innovation.
+        <h2 className="text-xl md:text-left text-center md:text-2xl   font-extrabold mb-4">
+          Ideas. <span className="text-green-400 mx-1">Insights. </span> Innovation.
         </h2>
         <p className="text-white/70 text-sm  max-w-md md:text-left text-center">
           Perspectives on scaling sustainably, transforming with technology,
@@ -75,7 +75,7 @@ export default function BlogTeaser() {
           >
             <h3 className="font-semibold mb-3">{title}</h3>
             <a
-              href="#"
+              href="/blog"
               className="inline-flex text-sm items-center gap-2 text-green-400 font-medium hover:underline group"
             >
               Read More

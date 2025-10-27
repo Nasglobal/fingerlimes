@@ -29,12 +29,12 @@ export default function CaseStudySpotlight() {
           <motion.div
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 3 }}
-            className="relative z-10  rounded-full flex items-center justify-center bg-white"
+            className="relative z-10 h-40 w-40 rounded-full flex items-center justify-center bg-white/80"
           >
             <Image
-              src="/assets/images/Audiomack-Logo.png"
+              src="/assets/images/black-Logo.png"
               alt="Audiomack"
-              width={100}
+              width={130}
               height={100}
               className="object-contain"
             />
@@ -105,29 +105,32 @@ export default function CaseStudySpotlight() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className=" z-10 bg-white text-black flex flex-col w-full rounded-xl p-5  md:p-10"
+          className=" z-10 rounded-2xl bg-white/16 backdrop-blur-sm border border-white/6 text-black flex flex-col w-full  p-5  md:p-10"
         >
          
 
-        <h2 className="text-3xl md:text-4xl mb-4 font-extrabold">
+        <h2 className="text-2xl text-white md:text-4xl mb-4 font-extrabold">
           Proof in Action
         
         </h2>
 
-          <p className="text-gray-600 md:text-xl text-sm  mb-8  leading-relaxed">
-            <strong>Audiomack</strong> expanded music streaming across Africa by
+          <p className="text-white md:text-xl text-sm  mb-8  leading-relaxed">
+            <strong className="text-gray-300">Fingerlimes</strong> expanded music streaming across Africa by
             leveraging telco billing and VAS integrations with{" "}
             <span className="text-yellow-600 font-semibold">M<span className="text-blue-600">T</span>N</span>,{" "}
             <span className="text-red-600 font-semibold">Airtel</span>,{" "}
-            <span className="text-green-700 font-semibold">GLO</span>, and{" "}
+            <span className="text-green-500 font-semibold">GLO</span>, and{" "}
             <span className=" font-semibold">9Mobile</span>.
           </p>
 
-           <a
-            href="/case-study/audiomack" className="group md:w-[25%] md:px-6 py-3 px-14 border border-black rounded-full hover:bg-white/10 transition flex text-center items-center gap-2">
-                          Read Case Study
-                          <ArrowRight className="w-4 h-4 text-black transition-transform group-hover:translate-y-1" />
-                        </a>
+          <a
+           className="flex md:w-[22%] text-center items-center justify-items-center gap-2 px-14 md:px-6 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:scale-105 transition-transform"
+          >
+            Read Case Study 
+            <ArrowRight className="w-5 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
+
+           
         </motion.div>
       </div>
 

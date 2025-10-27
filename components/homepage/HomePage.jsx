@@ -30,7 +30,7 @@ function HomePage() {
         <ServicesHighlights/>
         <CaseStudySpotlight/>
         <BlogTeaser/>
-        <ContactSection/>
+        <ContactSection spanheader={"Simple Conversation"} header={"Every Big Outcome Starts With a"} subtile={"Whether you’re building a new product, scaling into new markets, or exploring AI-driven opportunities, we’re here to help."}/>
         <Footer/>
       </div>
     </div>

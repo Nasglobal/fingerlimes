@@ -46,6 +46,23 @@ export default function RootLayout({ children }) {
           src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
           strategy="afterInteractive"
         />
+        
+        {/* ✅ Quickchat Widget */}
+        <Script id="quickchat-widget" strategy="afterInteractive">
+          {`
+            (function(e,a,d,i,c,t=a.createElement(d)){
+              e[c]=e[c]||function(){
+                (e[c].q=e[c].q||[]).push(arguments)
+              },
+              t.src=i,
+              t.async=1,
+              a.body.insertAdjacentElement("beforeend",t)
+            })(window,document,"script","https://widget.quickchat.ai/chat.js","_quickchat");
+
+            _quickchat("host", "app.quickchat.ai");
+            _quickchat("init", "bnxob5tks2");
+          `}
+        </Script>
       </body>
     </html>
   );
