@@ -33,7 +33,7 @@ export default function CaseStudySpotlight() {
           >
             <Image
               src="/assets/images/black-logo.png"
-              alt="Audiomack"
+              alt="Fingerlimes logo"
               width={130}
               height={100}
               className="object-contain"
