@@ -10,21 +10,21 @@ const posts = [
     title: "Why Strategy Before Code Delivers Better Outcomes",
     teaser:
       "Understand why business clarity matters before building technology solutions.",
-    image: "/assets/images/strategy.png",
+    image: "/assets/images/strategy.PNG",
   },
   {
     id: 2,
     title: "Scaling Across Africa: Lessons from Telco Integrations",
     teaser:
       "Insights from real-world integrations with MTN, Airtel, GLO, and 9Mobile.",
-    image: "/assets/images/telco.png",
+    image: "/assets/images/telco.PNG",
   },
   {
     id: 3,
     title: "AI Beyond the Hype: Turning Data into Real Business Value",
     teaser:
       "How predictive analytics and AI can drive smarter decisions for growth and innovation.",
-    image: "/assets/images/ai.png",
+    image: "/assets/images/ai.PNG",
   },
 ];
 
@@ -93,13 +93,13 @@ export default function FeaturedPosts() {
                 <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                 <p className="text-white/70 text-sm mb-4">{post.teaser}</p>
 
-                <a
+                <Link
                   href="#"
                   className="inline-flex items-center gap-2 text-green-400 font-semibold hover:underline group"
                 >
                   Read More
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </div>
             </motion.article>
           ))}

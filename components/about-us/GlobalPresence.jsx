@@ -86,7 +86,7 @@ export default function GlobalPresence() {
             className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:scale-[1.02] transition-transform"
           >
             <Image
-              src="/assets/images/london-office.png"
+              src="/assets/images/london-office.PNG"
               alt="London Office"
               width={600}
               height={400}
@@ -106,7 +106,7 @@ export default function GlobalPresence() {
             className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm hover:scale-[1.02] transition-transform"
           >
             <Image
-              src="/assets/images/lagos-office.png"
+              src="/assets/images/lagos-office.PNG"
               alt="Lagos Office"
               width={600}
               height={400}

@@ -54,7 +54,7 @@ export default function ServicesHero() {
           From product innovation to telco integrations and AI-driven insights, we create platforms that deliver measurable growth and lasting impact
         </motion.p>
         <motion.a
-          href="#services-overview"
+          href="/contact"
           whileHover={{ scale: 1.05 }}
           className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-green-400 hover:text-black transition"
         >

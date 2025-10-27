@@ -27,7 +27,7 @@ export default function WhoWeAre() {
         >
           <div className="relative w-full h-[380px] md:w-[480px] md:h-[480px]">
             <Image
-              src="/assets/images/Colla-image.png"
+              src="/assets/images/Colla-image.PNG"
               alt="Team collaboration illustration"
               fill
               className="object-cover rounded-lg border border-white/10 shadow-2xl"

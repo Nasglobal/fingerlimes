@@ -32,7 +32,7 @@ export default function CaseStudySpotlight() {
             className="relative z-10 h-40 w-40 rounded-full flex items-center justify-center bg-white/80"
           >
             <Image
-              src="/assets/images/black-Logo.png"
+              src="/assets/images/black-logo.png"
               alt="Audiomack"
               width={130}
               height={100}

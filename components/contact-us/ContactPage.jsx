@@ -147,9 +147,11 @@ export default function ContactPage() {
           <button className="group px-8 py-3 bg-green-400 text-black font-semibold rounded-full mx-2 hover:scale-105 transition-transform">
             Start a Conversation
           </button>
-          <button className="group px-8 py-3 border border-green-400 text-green-400 rounded-full mx-2 mt-5 md:mt-0 hover:bg-green-400 hover:text-black transition-transform">
-            Book a Call
-          </button>
+          <a
+          href="https://fingerlimes.youcanbook.me"
+           className="group px-8 py-3 border border-green-400 text-green-400 rounded-full mx-2 mt-5 md:mt-0 hover:bg-green-400 hover:text-black transition-transform">
+            Book Appointment
+          </a>
         </motion.div>
       </section>
       </div>

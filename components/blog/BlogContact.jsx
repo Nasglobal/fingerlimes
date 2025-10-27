@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowRight, } from "lucide-reac
 import Image from "next/image";
 import { useState } from "react";
 import Container from "../Container";
+import Link from "next/link";
 
 export default function BlogContact() {
   const [formData, setFormData] = useState({
@@ -245,12 +246,16 @@ export default function BlogContact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <button className="group px-8 py-3 bg-green-400 text-black font-semibold rounded-full mx-2 hover:scale-105 transition-transform">
+          <Link 
+          href="/contact"
+          className="group px-8 py-3 bg-green-400 text-black font-semibold rounded-full mx-2 hover:scale-105 transition-transform">
             Start a Conversation
-          </button>
-          <button className="group px-8 py-3 border border-green-400 text-green-400 rounded-full mx-2 mt-5 md:mt-0 hover:bg-green-400 hover:text-black transition-transform">
+          </Link>
+          <a
+          href="https://fingerlimes.youcanbook.me"
+             className="group px-8 py-3 border border-green-400 text-green-400 rounded-full mx-2 mt-5 md:mt-0 hover:bg-green-400 hover:text-black transition-transform">
             Book a Call
-          </button>
+          </a>
         </motion.div>
       </section>
       </Container>
