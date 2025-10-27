@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Container from "../Container";
+import Link from "next/link";
 
 const posts = [
   {
