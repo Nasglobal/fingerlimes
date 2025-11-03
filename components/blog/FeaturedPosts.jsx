@@ -1,33 +1,36 @@
 "use client";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Container from "../Container";
 import Link from "next/link";
+import { api } from "@/lib/api";
+import SpinnerLoader from "../SpinnerLoader";
 
-const posts = [
-  {
-    id: 1,
-    title: "Why Strategy Before Code Delivers Better Outcomes",
-    teaser:
-      "Understand why business clarity matters before building technology solutions.",
-    image: "/assets/images/strategy.PNG",
-  },
-  {
-    id: 2,
-    title: "Scaling Across Africa: Lessons from Telco Integrations",
-    teaser:
-      "Insights from real-world integrations with MTN, Airtel, GLO, and 9Mobile.",
-    image: "/assets/images/telco.PNG",
-  },
-  {
-    id: 3,
-    title: "AI Beyond the Hype: Turning Data into Real Business Value",
-    teaser:
-      "How predictive analytics and AI can drive smarter decisions for growth and innovation.",
-    image: "/assets/images/ai.PNG",
-  },
-];
+// const posts = [
+//   {
+//     id: 1,
+//     title: "Why Strategy Before Code Delivers Better Outcomes",
+//     teaser:
+//       "Understand why business clarity matters before building technology solutions.",
+//     image: "/assets/images/strategy.PNG",
+//   },
+//   {
+//     id: 2,
+//     title: "Scaling Across Africa: Lessons from Telco Integrations",
+//     teaser:
+//       "Insights from real-world integrations with MTN, Airtel, GLO, and 9Mobile.",
+//     image: "/assets/images/telco.PNG",
+//   },
+//   {
+//     id: 3,
+//     title: "AI Beyond the Hype: Turning Data into Real Business Value",
+//     teaser:
+//       "How predictive analytics and AI can drive smarter decisions for growth and innovation.",
+//     image: "/assets/images/ai.PNG",
+//   },
+// ];
 
 const container = {
   hidden: { opacity: 0 },
@@ -43,6 +46,32 @@ const card = {
 };
 
 export default function FeaturedPosts() {
+
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getBlogPosts()
+      
+  }, []);
+
+
+    const getBlogPosts = async()=>{
+         setLoading(true)
+        try {
+        const res = await fetch(`${api}/api/blog-posts?populate=*`);
+        const { data: cat_posts } = await res.json();
+        setPosts(cat_posts)
+        setLoading(false)
+  
+    } catch (error) {
+      console.log("error fetching blog post")
+      setLoading(false)
+      
+    }
+         
+      }
+
   return (
     <section className="relative py-20 md:py-28  text-white overflow-hidden">
       <Container>
@@ -65,14 +94,15 @@ export default function FeaturedPosts() {
         </motion.div>
 
         {/* Posts Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+        {loading ? <SpinnerLoader/> :
+
+        <>
+        {posts.length > 0 ?
+
+        <div
           className="grid grid-cols-1 md:grid-cols-3 gap-10"
         >
-          {posts.map((post) => (
+          {posts.slice(0, 9).map((post) => (
             <motion.article
               key={post.id}
               variants={card}
@@ -81,8 +111,8 @@ export default function FeaturedPosts() {
               {/* Thumbnail */}
               <div className="relative w-full h-56 overflow-hidden">
                 <Image
-                  src={post.image}
-                  alt={post.title}
+                  src={`${api}${post?.coverImage?.url}`}
+                  alt={post?.Title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -91,11 +121,11 @@ export default function FeaturedPosts() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                <p className="text-white/70 text-sm mb-4">{post.teaser}</p>
+                <h3 className="text-xl font-bold mb-2">{post?.Title}</h3>
+                <p className="text-white/70 text-sm mb-4">{post?.excerpt}</p>
 
                 <Link
-                  href="#"
+                  href={`/blog/${post?.slug}`}
                   className="inline-flex items-center gap-2 text-green-400 font-semibold hover:underline group"
                 >
                   Read More
@@ -104,8 +134,13 @@ export default function FeaturedPosts() {
               </div>
             </motion.article>
           ))}
-        </motion.div>
-
+        </div>:
+        <p className="text-sm text-center ">No featured post found</p>  
+      }
+        
+        </>
+        
+   }
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -114,13 +149,13 @@ export default function FeaturedPosts() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <a
+          {/* <a
             href="#"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-green-400 hover:text-black transition"
           >
             Explore All Articles
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </a> */}
         </motion.div>
       </div>
       </Container>
