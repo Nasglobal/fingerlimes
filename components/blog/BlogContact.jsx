@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowRight, } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import Container from "../Container";
 import Link from "next/link";
+
 
 export default function BlogContact() {
   const [formData, setFormData] = useState({
@@ -62,8 +63,19 @@ export default function BlogContact() {
         </motion.p>
       </section>
 
+       <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-xl font-semibold text-green-500 my-10 text-center"
+          >
+            Start a Conversation
+            <p className="p-5 border gap-3 border-white/30 flex justify-self-center items-center  text-center text-white/80 mt-3 md:w-[50%] text-sm font-light">Click on the Chat Icon at the right bottom to start a conversation <ChevronDown/> </p>
+          </motion.h2>
+
+
       {/* 2️⃣ Contact Form Section */}
-      <section className="relative py-5  bg-black/80 backdrop-blur-md">
+      {/* <section className="relative py-5  bg-black/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -129,7 +141,7 @@ export default function BlogContact() {
           )}
         </div>
       </section>
-
+ */}
       {/* 3️⃣ Office Locations */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black to-[#08140d]">
         <motion.h2
@@ -194,23 +206,24 @@ export default function BlogContact() {
                 <div className="max-w-5xl items-center mx-auto grid md:grid-cols-2 gap-10 text-white/80">
           <div className=" flex flex-col justify-end md:items-end md:pr-10">
             <h3 className="text-2xl font-semibold mb-3 text-green-400">London Office</h3>
-            <p>123 Tech Street, London, UK</p>
+            <p>Brayford Square London England E1 0SG</p>
             <p className="flex items-center gap-2 mt-2">
-              <Phone className="w-4 h-4" /> +44 XXX XXX XXXX
+              <Phone className="w-4 h-4" /> +447502867951  
+
             </p>
             <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4" /> hello@fingerlimes.com
+              <Mail className="w-4 h-4" /> md@fingerlimesgroup.com
             </p>
           </div>
 
           <div className="md:pl-10">
             <h3 className="text-2xl font-semibold mb-3 text-green-400">Lagos Office</h3>
-            <p>45 Innovation Drive, Lagos, Nigeria</p>
+            <p>5a Ayo Jagun Street, Lekki Phase 1, Lagos Nigeria</p>
             <p className="flex items-center gap-2 mt-2">
-              <Phone className="w-4 h-4" /> +234 XXX XXX XXXX
+              <Phone className="w-4 h-4" /> +2348067598894
             </p>
             <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4" /> hello@fingerlimes.com
+              <Mail className="w-4 h-4" /> md@fingerlimesgroup.com
             </p>
           </div>
         </div>
@@ -218,7 +231,7 @@ export default function BlogContact() {
       </section>
 
       {/* 4️⃣ Alternative Contact / Social */}
-      <section className="py-20 bg-black/80 backdrop-blur-md text-center">
+      <section className="py-20 bg-black/80 backdrop-blur-md text-center ">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -232,15 +245,15 @@ export default function BlogContact() {
         </p>
 
         <div className="flex justify-center gap-6">
-          <a href="#" className="hover:text-green-400 transition"><Linkedin /></a>
+          <a href="https://www.linkedin.com/company/eltonmichael/ " className="hover:text-green-400 transition"><Linkedin /></a>
           <a href="#" className="hover:text-green-400 transition"><Twitter /></a>
-          <a href="mailto:hello@fingerlimes.com" className="hover:text-green-400 transition"><Mail /></a>
-          <a href="tel:+234XXXXXXXXXX" className="hover:text-green-400 transition"><Phone /></a>
+          <a href="mailto:md@fingerlimesgroup.com" className="hover:text-green-400 transition"><Mail /></a>
+          <a href="tel:+447502867951" className="hover:text-green-400 transition"><Phone /></a>
         </div>
       </section>
 
       {/* 5️⃣ Final Sticky CTA */}
-      <section className="relative pb-8 text-center">
+      <section className="relative pb-8 text-center mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

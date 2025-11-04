@@ -47,7 +47,7 @@ export default function IntroSection() {
             alt="idea image"
             width={600}
             height={300}
-            className="w-full h-[300px] mb-10"
+            className="w-full md:h-[450px] h-[300px] mb-10"
         />
           <p className="md:text-sm text-[10px] uppercase tracking-wide text-green-300/90 my-3">
             Explore the ways we bring business and technology together.

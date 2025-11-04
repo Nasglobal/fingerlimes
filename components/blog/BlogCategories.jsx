@@ -139,7 +139,7 @@ export default function BlogCategories() {
                   
                   className="grid grid-cols-1 mt-10 md:grid-cols-3 gap-10"
                 >
-                  {posts.slice(0, 3).map((post) => (
+                  {posts?.slice(0, 3).map((post) => (
                     <motion.article
                       key={post.id}
                       variants={card}
@@ -175,7 +175,7 @@ export default function BlogCategories() {
         
                 {/* CTA */}
 
-                {posts.length > 0  ?
+                {posts?.length > 0  ?
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}

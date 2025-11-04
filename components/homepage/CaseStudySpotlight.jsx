@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Container from "../Container";
+import Link from "next/link";
 
 export default function CaseStudySpotlight() {
   return (
@@ -123,12 +124,13 @@ export default function CaseStudySpotlight() {
             <span className=" font-semibold">9Mobile</span>.
           </p>
 
-          <a
+          <Link
+          href="/blog"
            className="flex md:w-[22%] text-center items-center justify-items-center gap-2 px-14 md:px-6 py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:scale-105 transition-transform"
           >
             Read Case Study 
             <ArrowRight className="w-5 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
 
            
         </motion.div>

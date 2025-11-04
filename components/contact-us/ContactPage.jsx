@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send,BookAIcon,Linkedin,Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -36,16 +37,16 @@ export default function ContactPage() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20"
         >
           {[
-            { icon: Mail, title: "Email", text: "hello@fingerlimes.com" },
+            { icon: Mail, title: "Email", text: "md@fingerlimesgroup.com" },
             {
               icon: Phone,
               title: "Call Us",
-              text: "+44 XXX XXX XXXX | +234 XXX XXX XXXX",
+              text: "+447502867951  | +2348067598894 ",
             },
             {
               icon: MapPin,
               title: "Our Offices",
-              text: "📍 London Office  •  📍 Lagos Office",
+              text: "📍 London office Address: Brayford Square London England E1 0SG •  📍 Lagos Office: 5a Ayo Jagun Street, Lekki Phase 1, Lagos Nigeria",
             },
           ].map((item, index) => {
             const Icon = item.icon;
@@ -78,42 +79,8 @@ export default function ContactPage() {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.form
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto bg-white/5 border border-white/10 backdrop-blur-lg p-10 rounded-3xl shadow-lg"
-        >
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-4 bg-transparent border border-white/20 rounded-xl focus:border-green-400 outline-none text-white placeholder-white/40"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-4 bg-transparent border border-white/20 rounded-xl focus:border-green-400 outline-none text-white placeholder-white/40"
-              required
-            />
-          </div>
-          <textarea
-            placeholder="Your Message"
-            rows="5"
-            className="w-full p-4 bg-transparent border border-white/20 rounded-xl focus:border-green-400 outline-none text-white placeholder-white/40 mb-6"
-            required
-          ></textarea>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center justify-center gap-2 px-8 py-3 bg-green-500 text-black font-semibold rounded-full shadow-lg hover:bg-green-400 transition mx-auto"
-          >
-            Send Message
-            <Send className="w-4 h-4" />
-          </motion.button>
-        </motion.form>
+        
+        
 
         {/* 4️⃣ Alternative Contact / Social */}
       <section className="py-20 backdrop-blur-md text-center">
@@ -130,10 +97,10 @@ export default function ContactPage() {
         </p>
 
         <div className="flex justify-center gap-6">
-          <a href="#" className="hover:text-green-400 transition"><Linkedin /></a>
+          <a href="https://www.linkedin.com/company/eltonmichael/ " className="hover:text-green-400 transition"><Linkedin /></a>
           <a href="#" className="hover:text-green-400 transition"><Twitter /></a>
-          <a href="mailto:hello@fingerlimes.com" className="hover:text-green-400 transition"><Mail /></a>
-          <a href="tel:+234XXXXXXXXXX" className="hover:text-green-400 transition"><Phone /></a>
+          <a href="mailto:md@fingerlimesgroup.com" className="hover:text-green-400 transition"><Mail /></a>
+          <a href="tel:+447502867951" className="hover:text-green-400 transition"><Phone /></a>
         </div>
       </section>
 
@@ -144,9 +111,9 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <button className="group px-8 py-3 bg-green-400 text-black font-semibold rounded-full mx-2 hover:scale-105 transition-transform">
+          <Link href="#" className="group px-8 py-3 bg-green-400 text-black font-semibold rounded-full mx-2 hover:scale-105 transition-transform">
             Start a Conversation
-          </button>
+          </Link>
           <a
           href="https://fingerlimes.youcanbook.me"
            className="group px-8 py-3 border border-green-400 text-green-400 rounded-full mx-2 mt-5 md:mt-0 hover:bg-green-400 hover:text-black transition-transform">

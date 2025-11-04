@@ -34,12 +34,21 @@ export default function ContactSection({header, spanheader,subtile}) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="space-y-3 text-sm text-white/80 mb-10"
+          className="space-y-5 text-sm text-white/80 mb-10"
         >
-          <p className="flex md:justify-center md:text-center text-left"><MapPin className="w-5 h-5 mr-1 text-green-400"/> <span className="font-semibold  text-white">London Office</span></p>
-          <p className="flex md:justify-center md:text-center text-left"><MapPin className="w-5 h-5 mr-1 text-green-400"/> <span className="font-semibold  text-white">Lagos Office</span></p>
-          <p className="flex md:justify-center md:text-center text-left"><MailIcon className="w-5 h-5 mr-1 text-green-400"/> <a href="mailto:hello@fingerlimes.com" className="hover:text-green-400 transition-colors">hello@fingerlimes.com</a></p>
-          <p className="flex md:justify-center md:text-center text-left"><PhoneCall className="w-4 h-4 mr-1 text-green-400" /> +44 XXX XXX XXXX | +234 XXX XXX XXXX</p>
+          <div>
+            <p className="flex md:justify-center md:text-center text-left"><MapPin className="w-5 h-5 mr-1 text-green-400"/> <span className="font-semibold  text-white">London Office</span></p>
+          <p className="text-xs  md:text-center mt-1 font-extralight text-white/60 ">Brayford Square London England E1 0SG •</p>
+          </div>
+
+          <div>
+            <p className="flex md:justify-center md:text-center text-left"><MapPin className="w-5 h-5 mr-1 text-green-400"/> <span className="font-semibold  text-white">Lagos Office</span></p>
+          <p className="text-xs  md:text-center mt-1 font-extralight text-white/60 ">5a Ayo Jagun Street, Lekki Phase 1, Lagos Nigeria</p>
+          </div>
+          
+          
+          <p className="flex md:justify-center md:text-center text-left"><MailIcon className="w-5 h-5 mr-1 text-green-400"/> <a href="mailto:md@fingerlimesgroup.com" className="hover:text-green-400 transition-colors">md@fingerlimesgroup.com</a></p>
+          <p className="flex md:justify-center md:text-center text-left"><PhoneCall className="w-4 h-4 mr-1 text-green-400" /> +447502867951  | +2348067598894 </p>
         </motion.div>
 
         {/* CTA Buttons */}

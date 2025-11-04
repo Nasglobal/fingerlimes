@@ -97,12 +97,12 @@ export default function FeaturedPosts() {
         {loading ? <SpinnerLoader/> :
 
         <>
-        {posts.length > 0 ?
+        {posts?.length > 0 ?
 
         <div
           className="grid grid-cols-1 md:grid-cols-3 gap-10"
         >
-          {posts.slice(0, 9).map((post) => (
+          {posts?.slice(0, 9).map((post) => (
             <motion.article
               key={post.id}
               variants={card}

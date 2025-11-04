@@ -140,10 +140,11 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
-              <button className="group  px-14 md:px-6 py-3 text-sm border border-white md:border-white/20 rounded-full hover:bg-white/10  transition flex items-center gap-2">
+               <Link
+              href="/services" className="group  px-14 md:px-6 py-3 text-sm border border-white md:border-white/20 rounded-full hover:bg-white/10  transition flex items-center gap-2">
                 Explore Services
                 <ArrowDown className="w-4 h-4 text-white transition-transform group-hover:translate-y-1" />
-              </button>
+              </Link>
             </motion.div>
 
             {/* Scroll Cue */}

@@ -13,7 +13,7 @@ const caseStudies = [
     description:
       "Expanded music streaming across Africa using telco billing and VAS integrations. Partnered with MTN, Airtel, GLO, and 9Mobile to reach millions.",
     cta: "Read Case Study",
-    image: "/assets/images/black-logo.png",
+    image: "/assets/images/Audiomack-Logo.png",
   },
  
   {
@@ -66,7 +66,7 @@ export default function CaseStudies() {
                   src={cs.image}
                   alt={cs.title}
                   fill
-                  className="w-[250px] h-[200px]"
+                  className="w-[200px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               </div>
