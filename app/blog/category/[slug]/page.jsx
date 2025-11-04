@@ -12,6 +12,14 @@ export default async function CategoryPage({ params }) {
   const res = await fetch(`${api}/api/blog-posts?filters[category][slug][$eq]=${slug}&populate=*`);
   const { data: posts } = await res.json();
 
+
+  const getImageUrl = (url) => {
+  if (!url) return "assets/images/placeholder.PNG";
+  if (url.startsWith("http")) return url; // already absolute from Strapi Cloud
+  return `${process.env.NEXT_PUBLIC_API_URL}${url}`;
+};
+
+
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Background gradient */}
@@ -34,7 +42,7 @@ export default async function CategoryPage({ params }) {
             <Image
               width={400}
               height={300}
-              src={`${api}${post?.coverImage?.url}`}
+              src={`${getImageUrl(post?.coverImage?.url)}`}
               className="rounded-lg mb-4"
               alt={post?.Title}
             />

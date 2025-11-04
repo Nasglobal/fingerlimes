@@ -72,6 +72,13 @@ export default function FeaturedPosts() {
          
       }
 
+
+      const getImageUrl = (url) => {
+  if (!url) return "assets/images/placeholder.PNG";
+  if (url.startsWith("http")) return url; // already absolute from Strapi Cloud
+  return `${process.env.NEXT_PUBLIC_API_URL}${url}`;
+};
+
   return (
     <section className="relative py-20 md:py-28  text-white overflow-hidden">
       <Container>
@@ -111,7 +118,7 @@ export default function FeaturedPosts() {
               {/* Thumbnail */}
               <div className="relative w-full h-56 overflow-hidden">
                 <Image
-                  src={`${api}${post?.coverImage?.url}`}
+                  src={`${getImageUrl(post?.coverImage?.url)}`}
                   alt={post?.Title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"

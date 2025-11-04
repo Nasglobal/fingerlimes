@@ -33,9 +33,11 @@ export default async function BlogPostPage({ params }) {
     return <div className="text-center py-20 text-white">Post not found.</div>;
   }
 
-  const imageUrl = post?.coverImage?.url
-    ? `${api}${post?.coverImage?.url}`
-    : "/placeholder.png";
+ const getImageUrl = (url) => {
+  if (!url) return "assets/images/placeholder.PNG";
+  if (url.startsWith("http")) return url; // already absolute from Strapi Cloud
+  return `${process.env.NEXT_PUBLIC_API_URL}${url}`;
+};
 
   return (
      <div className="relative min-h-screen bg-black overflow-hidden">
@@ -50,15 +52,14 @@ export default async function BlogPostPage({ params }) {
       <Container>
         <HangingMenu/>
     <section className="relative  text-white pt-28 pb-20  ">
-        
-      <div className="max-w-5xl bg-white/5  mx-auto p-4">
         <BackButton/>
+      <div className="max-w-5xl bg-white/5  mx-auto p-4">
         <Image
-          src={imageUrl}
+          src={getImageUrl(post?.coverImage?.url)}
           alt={post?.Title}
           width={400}
           height={300}
-          className="rounded-xl mb-8 w-full h-80 object-cover"
+          className="rounded-xl mb-8 w-full h-100 object-cover"
         />
         <h1 className="md:text-3xl text-lg font-bold mb-4">{post?.Title}</h1>
         <p className="text-gray-300 mb-1">By {post?.author}</p>

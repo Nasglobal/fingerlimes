@@ -13,7 +13,7 @@ function BackButton() {
   onClick={() => router.back()}
   whileHover={{ x: -3, scale: 1.05 }}
   whileTap={{ scale: 0.95 }}
-  className="flex items-center gap-2 px-4 py-2 rounded-full 
+  className="flex items-center md:ml-16 gap-2 px-4 py-2 my-5 rounded-full 
              bg-white/10 backdrop-blur-md text-white/90 
              border border-white/20 hover:bg-white/20 
              transition-all mb-6 shadow-md"
